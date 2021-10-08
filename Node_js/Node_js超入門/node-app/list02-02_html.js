@@ -5,6 +5,7 @@ const http = require('http');
 var server = http.createServer(
   // サーバからクライアントへの応答
   (request,response)=>{
+    // htmlで表示
     response.end('<html><body><h1>Hello</h1><p>Welcome to Node.js</p></body></html>');
   }
 );
