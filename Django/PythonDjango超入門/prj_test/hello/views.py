@@ -21,7 +21,12 @@ from django.http import HttpResponse
     #return HttpResponse(result)
 
 # http://localhost:8000/hello/19810106/hashimoto
-def index(request, id, nickname):
-    result = 'your id: ' + str(id) + ', name: "' \
-        + nickname + '".'
+# def index(request, id, nickname):
+#     result = 'your id: ' + str(id) + ', name: "' \
+#         + nickname + '".'
+#     return HttpResponse(result)
+
+# http://localhost:8000/hello/my_name_is_naoki.I_am_41_years_old.
+def index(request, nickname, age):
+    result = 'your account: ' + nickname + '" (' + str(age) + ').'
     return HttpResponse(result)
