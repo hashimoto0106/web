@@ -1,5 +1,8 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+# アクセスしたアドレスの画面表示に必要な処理 = ビュー
+# 画面表示を行うのに必要な処理はビューで担当
+
+# from django.shortcuts import render
+# from django.http import HttpResponse
 
 
 # Create your views here.
@@ -27,6 +30,14 @@ from django.http import HttpResponse
 #     return HttpResponse(result)
 
 # http://localhost:8000/hello/my_name_is_naoki.I_am_41_years_old.
-def index(request, nickname, age):
-    result = 'your account: ' + nickname + '" (' + str(age) + ').'
-    return HttpResponse(result)
+# def index(request, nickname, age):
+#     result = 'your account: ' + nickname + '" (' + str(age) + ').'
+#     return HttpResponse(result)
+
+
+from django.shortcuts import render
+from django.http import HttpResponse
+
+def index(request):
+    # テンプレートに記述されている変数などを実際に使う値に置き換えて表示を完成させる処理
+    return render(request, 'hello/index.html')
