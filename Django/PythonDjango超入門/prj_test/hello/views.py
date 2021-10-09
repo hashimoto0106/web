@@ -43,8 +43,22 @@ def index(request):
     # return render(request, 'hello/index.html')
     
     # テンプレートに値を渡す
+ #    params = {
+ #        'title':'Hello/Index',
+ #        'msg':'これは、サンプルで作ったページです。',
+ #    }
+ #    return render(request, 'hello/index.html', params)
     params = {
         'title':'Hello/Index',
         'msg':'これは、サンプルで作ったページです。',
+        'goto':'next',
+    }
+    return render(request, 'hello/index.html', params)
+
+def next(request):
+    params = {
+        'title':'Hello/Next',
+        'msg':'これは、もう１つのページです。',
+        'goto':'index',
     }
     return render(request, 'hello/index.html', params)
