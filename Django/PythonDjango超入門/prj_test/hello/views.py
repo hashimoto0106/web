@@ -4,7 +4,7 @@ from django.http import HttpResponse
 
 # Create your views here.
 
-def index(request):
+#def index(request):
     # return HttpResponse("Hello Django!!")
 
     # クエリパラメータ表示
@@ -13,9 +13,15 @@ def index(request):
     # return HttpResponse('you typed: "' + msg + '".')
     
     # パラメータが無い場合
-    if 'msg' in request.GET:
-        msg = request.GET['msg']
-        result = 'you typed: "' + msg + '".'
-    else:
-        result = 'please send msg parameter!'
+    #if 'msg' in request.GET:
+    #    msg = request.GET['msg']
+    #    result = 'you typed: "' + msg + '".'
+    #else:
+    #    result = 'please send msg parameter!'
+    #return HttpResponse(result)
+
+# http://localhost:8000/hello/19810106/hashimoto
+def index(request, id, nickname):
+    result = 'your id: ' + str(id) + ', name: "' \
+        + nickname + '".'
     return HttpResponse(result)
