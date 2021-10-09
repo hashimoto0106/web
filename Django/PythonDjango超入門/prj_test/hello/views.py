@@ -40,4 +40,11 @@ from django.http import HttpResponse
 
 def index(request):
     # テンプレートに記述されている変数などを実際に使う値に置き換えて表示を完成させる処理
-    return render(request, 'hello/index.html')
+    # return render(request, 'hello/index.html')
+    
+    # テンプレートに値を渡す
+    params = {
+        'title':'Hello/Index',
+        'msg':'これは、サンプルで作ったページです。',
+    }
+    return render(request, 'hello/index.html', params)
